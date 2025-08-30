@@ -106,11 +106,6 @@ export default function ProfileScreen() {
             label="Número de Teléfono"
             onPress={() => { }}
           />
-          <MenuItem
-            icon={<Pin size={20} color={Colors.light.text} />}
-            label="Dirección"
-            onPress={() => { }}
-          />
         </Section>
 
         {/* Pagos y Seguridad */}
@@ -125,20 +120,24 @@ export default function ProfileScreen() {
             label="Cambiar Contraseña"
             onPress={() => { }}
           />
+          {/*
           <MenuItem
             icon={<LockKeyhole size={20} color={Colors.light.text} />}
             label="Autenticación de Dos Factores"
             onPress={() => { }}
           />
+          */}
         </Section>
 
         {/* Soporte y Ayuda */}
         <Section title="Soporte y Ayuda">
+          {/*
           <MenuItem
             icon={<CircleQuestionMark size={20} color={Colors.light.text} />}
             label="Preguntas Frecuentes"
             onPress={() => { }}
           />
+          */}
           <MenuItem
             icon={<Phone size={20} color={Colors.light.text} />}
             label="Contactar Soporte"
@@ -151,18 +150,22 @@ export default function ProfileScreen() {
           />
         </Section>
 
-        {/* Configuración y Privacidad */}
-        <Section title="Configuración y Privacidad">
+        {/* Privacidad */}
+        <Section title="Privacidad">
+          {/*
           <MenuItem
             icon={<Bell size={20} color={Colors.light.text} />}
             label="Notificaciones"
             onPress={() => { }}
           />
+          */}
+          {/*
           <MenuItem
             icon={<Earth size={20} color={Colors.light.text} />}
             label="Idioma"
             onPress={() => { }}
           />
+          */}
           <MenuItem
             icon={<Eye size={20} color={Colors.light.text} />}
             label="Privacidad"

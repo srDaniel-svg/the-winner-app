@@ -1,4 +1,4 @@
-// FILE: components/WalletScreen.tsx (orange theme + blobs)
+// FILE: components/WalletScreen.tsx (orange theme + blobs + GIF abajo pequeño)
 import React, { useEffect, useRef } from 'react';
 import {
   SafeAreaView,
@@ -13,19 +13,26 @@ import {
   Easing,
 } from 'react-native';
 
-type Props = {
-  onCreateAccount?: () => void;
-  onLogin?: () => void;
-  avatarUri?: string;
-};
-
 // --- Theme colors (match your mock) ---
-const ORANGE = '#F97316'; // tailwind orange-500
+const ORANGE = '#F97316'; // orange-500
 const ORANGE_DARK = '#EA580C'; // orange-600
 const ORANGE_LIGHT = '#FFE8D9';
 const YELLOW = '#FACC15'; // yellow-400
 
-const WalletScreen: React.FC<Props> = ({ onCreateAccount, onLogin, avatarUri }) => {
+// ----- Mini componente local para el GIF circular -----
+const EnaLoading: React.FC<{ size?: number }> = ({ size = 88 }) => {
+  return (
+    <View style={[styles.enaWrap, { width: size, height: size, borderRadius: size / 2 }]}> 
+      <Image
+        source={require('./images/ena.gif')} // coloca el gif aquí: components/images/ena.gif
+        style={{ width: '100%', height: '100%' }}
+        resizeMode="cover"
+      />
+    </View>
+  );
+};
+
+const WalletScreen: React.FC<{ onCreateAccount?: () => void; onLogin?: () => void; avatarUri?: string; }> = ({ onCreateAccount, onLogin, avatarUri }) => {
   // --- Animations ---
   const fadeIn = useRef(new Animated.Value(0)).current;
   const slideUp = useRef(new Animated.Value(20)).current;
@@ -61,7 +68,7 @@ const WalletScreen: React.FC<Props> = ({ onCreateAccount, onLogin, avatarUri }) 
 
       <ScrollView contentContainerStyle={styles.scroll} bounces={false}>
         <Animated.View style={{ opacity: fadeIn, transform: [{ translateY: slideUp }], alignItems: 'center', width: '100%' }}>
-          {/* Avatar with orange ring */}
+          {/* Avatar con aro naranja */}
           <View style={styles.avatarWrap}>
             <Animated.View pointerEvents="none" style={[styles.pulseRing, { transform: [{ scale: pulseScale }], opacity: pulseOpacity }]} />
             <View style={styles.avatarBorder}>
@@ -78,10 +85,15 @@ const WalletScreen: React.FC<Props> = ({ onCreateAccount, onLogin, avatarUri }) 
             paga tu paputransporte en tu papubilletera mobil para paputransportes :V
           </Animated.Text>
 
-          {/* Buttons */}
+          {/* Botones */}
           <View style={styles.actions}>
             <AnimatedButton label="Crear Cuenta" variant="primary" onPress={onCreateAccount} />
             <AnimatedButton label="Iniciar Sesion" variant="outline" onPress={onLogin} />
+          </View>
+
+          {/* GIF abajo (pequeño, centrado) */}
+          <View style={styles.bottomGifArea}>
+            <EnaLoading size={88} />
           </View>
         </Animated.View>
       </ScrollView>
@@ -131,24 +143,18 @@ const styles = StyleSheet.create({
 
   // text
   title: { fontSize: 26, fontWeight: '800', color: '#111827', marginTop: 4 },
-  subtitle: { fontSize: 13, textAlign: 'center', color: ORANGE_DARK, lineHeight: 18, marginTop: 10, marginBottom: 28 },
+  subtitle: { fontSize: 13, textAlign: 'center', color: ORANGE_DARK, lineHeight: 18, marginTop: 10, marginBottom: 24 },
 
   // buttons
   actions: { width: '100%', gap: 16 },
-  primaryBtn: {
-    backgroundColor: ORANGE,
-    paddingVertical: 16,
-    borderRadius: 14,
-    alignItems: 'center',
-    shadowColor: '#000',
-    shadowOpacity: 0.12,
-    shadowRadius: 10,
-    shadowOffset: { width: 0, height: 6 },
-    elevation: 3,
-  },
+  primaryBtn: { backgroundColor: ORANGE, paddingVertical: 16, borderRadius: 14, alignItems: 'center', shadowColor: '#000', shadowOpacity: 0.12, shadowRadius: 10, shadowOffset: { width: 0, height: 6 }, elevation: 3 },
   primaryTxt: { color: '#FFFFFF', fontWeight: '800', fontSize: 16 },
   outlineBtn: { backgroundColor: '#FFFFFF', borderWidth: 2, borderColor: ORANGE, paddingVertical: 14, borderRadius: 14, alignItems: 'center' },
   outlineTxt: { color: ORANGE, fontWeight: '800', fontSize: 16 },
+
+  // gif abajo
+  bottomGifArea: { marginTop: 24, marginBottom: 6 },
+  enaWrap: { overflow: 'hidden', borderWidth: 6, borderColor: ORANGE, backgroundColor: '#fff' },
 });
 
 // -----------------------------------------------------------------------------
@@ -166,5 +172,5 @@ export default function HomeScreen() {
 }
 */
 
-// If you don't use alias '@/components':
+// Si no usas alias '@/components':
 // import WalletScreen from '../../components/WalletScreen';

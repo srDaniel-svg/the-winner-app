@@ -12,9 +12,11 @@ export default function HomeScreen() {
 
        <Pressable
         onPress={() => setOpen(true)}
-        style={{ padding: 12, backgroundColor: "#2563EB", borderRadius: 10 }}
+        style={{ padding: 12, backgroundColor: "#2563EB", borderRadius: 999, width: 120, height: 120, alignItems: "center", marginTop: 20 }}
       >
-        <Text style={{ color: "#fff", fontWeight: "600" }}>Abrir modal</Text>
+        <Text style={{ color: "#fff", fontWeight: "600" }}>
+          asd
+        </Text>
       </Pressable>
 
        <CustomModal

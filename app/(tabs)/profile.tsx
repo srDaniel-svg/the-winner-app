@@ -1,6 +1,6 @@
 import { ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { Colors } from '../../constants/Colors';
-import { User } from 'lucide-react-native';
+import { Bell, CircleQuestionMark, CreditCard, Earth, Eye, Lock, LockKeyhole, Mail, Phone, Pin, Smartphone, User } from 'lucide-react-native';
 
 export default function ProfileScreen() {
   return (
@@ -18,16 +18,14 @@ export default function ProfileScreen() {
 
       {/* Secciones del perfil */}
       <View style={styles.sectionsContainer}>
-        
+
         {/* Información Personal */}
         <View style={styles.section}>
           <Text style={styles.sectionTitle}>Información Personal</Text>
           <TouchableOpacity style={styles.menuItem}>
             <View style={styles.menuItemLeft}>
               <Text style={styles.menuIcon}>
-                <User>
-                  <User size={20} color={Colors.light.text} />
-                </User>
+                <User size={20} color={Colors.light.text} />
               </Text>
               <Text style={styles.menuText}>Editar Perfil</Text>
             </View>
@@ -35,14 +33,18 @@ export default function ProfileScreen() {
           </TouchableOpacity>
           <TouchableOpacity style={styles.menuItem}>
             <View style={styles.menuItemLeft}>
-              <Text style={styles.menuIcon}>📱</Text>
+              <Text style={styles.menuIcon}>
+                <Smartphone />
+              </Text>
               <Text style={styles.menuText}>Número de Teléfono</Text>
             </View>
             <Text style={styles.arrow}>›</Text>
           </TouchableOpacity>
           <TouchableOpacity style={styles.menuItem}>
             <View style={styles.menuItemLeft}>
-              <Text style={styles.menuIcon}>📍</Text>
+              <Text style={styles.menuIcon}>
+                <Pin />
+              </Text>
               <Text style={styles.menuText}>Dirección</Text>
             </View>
             <Text style={styles.arrow}>›</Text>
@@ -54,21 +56,27 @@ export default function ProfileScreen() {
           <Text style={styles.sectionTitle}>Pagos y Seguridad</Text>
           <TouchableOpacity style={styles.menuItem}>
             <View style={styles.menuItemLeft}>
-              <Text style={styles.menuIcon}>💳</Text>
+              <Text style={styles.menuIcon}>
+                <CreditCard />
+              </Text>
               <Text style={styles.menuText}>Métodos de Pago</Text>
             </View>
             <Text style={styles.arrow}>›</Text>
           </TouchableOpacity>
           <TouchableOpacity style={styles.menuItem}>
             <View style={styles.menuItemLeft}>
-              <Text style={styles.menuIcon}>🔒</Text>
+              <Text style={styles.menuIcon}>
+                <Lock />
+              </Text>
               <Text style={styles.menuText}>Cambiar Contraseña</Text>
             </View>
             <Text style={styles.arrow}>›</Text>
           </TouchableOpacity>
           <TouchableOpacity style={styles.menuItem}>
             <View style={styles.menuItemLeft}>
-              <Text style={styles.menuIcon}>🔐</Text>
+              <Text style={styles.menuIcon}>
+                <LockKeyhole />
+              </Text>
               <Text style={styles.menuText}>Autenticación de Dos Factores</Text>
             </View>
             <Text style={styles.arrow}>›</Text>
@@ -80,21 +88,27 @@ export default function ProfileScreen() {
           <Text style={styles.sectionTitle}>Soporte y Ayuda</Text>
           <TouchableOpacity style={styles.menuItem}>
             <View style={styles.menuItemLeft}>
-              <Text style={styles.menuIcon}>❓</Text>
+              <Text style={styles.menuIcon}>
+                <CircleQuestionMark />
+              </Text>
               <Text style={styles.menuText}>Preguntas Frecuentes</Text>
             </View>
             <Text style={styles.arrow}>›</Text>
           </TouchableOpacity>
           <TouchableOpacity style={styles.menuItem}>
             <View style={styles.menuItemLeft}>
-              <Text style={styles.menuIcon}>📞</Text>
+              <Text style={styles.menuIcon}>
+                <Phone />
+              </Text>
               <Text style={styles.menuText}>Contactar Soporte</Text>
             </View>
             <Text style={styles.arrow}>›</Text>
           </TouchableOpacity>
           <TouchableOpacity style={styles.menuItem}>
             <View style={styles.menuItemLeft}>
-              <Text style={styles.menuIcon}>📧</Text>
+              <Text style={styles.menuIcon}>
+                <Mail />
+              </Text>
               <Text style={styles.menuText}>Enviar Feedback</Text>
             </View>
             <Text style={styles.arrow}>›</Text>
@@ -106,21 +120,27 @@ export default function ProfileScreen() {
           <Text style={styles.sectionTitle}>Configuración y Privacidad</Text>
           <TouchableOpacity style={styles.menuItem}>
             <View style={styles.menuItemLeft}>
-              <Text style={styles.menuIcon}>🔔</Text>
+              <Text style={styles.menuIcon}>
+                <Bell />
+              </Text>
               <Text style={styles.menuText}>Notificaciones</Text>
             </View>
             <Text style={styles.arrow}>›</Text>
           </TouchableOpacity>
           <TouchableOpacity style={styles.menuItem}>
             <View style={styles.menuItemLeft}>
-              <Text style={styles.menuIcon}>🌍</Text>
+              <Text style={styles.menuIcon}>
+                <Earth />
+                </Text>
               <Text style={styles.menuText}>Idioma</Text>
             </View>
             <Text style={styles.arrow}>›</Text>
           </TouchableOpacity>
           <TouchableOpacity style={styles.menuItem}>
             <View style={styles.menuItemLeft}>
-              <Text style={styles.menuIcon}>👁️</Text>
+              <Text style={styles.menuIcon}>
+                <Eye />
+              </Text>
               <Text style={styles.menuText}>Privacidad</Text>
             </View>
             <Text style={styles.arrow}>›</Text>

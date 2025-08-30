@@ -1,5 +1,6 @@
 import { ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { Colors } from '../../constants/Colors';
+import { User } from 'lucide-react-native';
 
 export default function ProfileScreen() {
   return (
@@ -23,7 +24,11 @@ export default function ProfileScreen() {
           <Text style={styles.sectionTitle}>Información Personal</Text>
           <TouchableOpacity style={styles.menuItem}>
             <View style={styles.menuItemLeft}>
-              <Text style={styles.menuIcon}>👤</Text>
+              <Text style={styles.menuIcon}>
+                <User>
+                  <User size={20} color={Colors.light.text} />
+                </User>
+              </Text>
               <Text style={styles.menuText}>Editar Perfil</Text>
             </View>
             <Text style={styles.arrow}>›</Text>

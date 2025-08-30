@@ -3,8 +3,8 @@ import { Colors } from '../../constants/Colors';
 
 export default function ProfileScreen() {
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Profile</Text>
+    <View>
+      <Text>Historial</Text>
     </View>
   );
 }

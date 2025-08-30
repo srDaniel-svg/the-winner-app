@@ -122,6 +122,9 @@ const styles = StyleSheet.create({
 import WalletScreen from '@/components/WalletScreen';
 
 export default function HomeScreen() {
+
+  const [open, setOpen] = useState(false);
+
   return (
     <WalletScreen
       onCreateAccount={() => console.log('Crear Cuenta')}

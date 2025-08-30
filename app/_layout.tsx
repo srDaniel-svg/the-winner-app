@@ -18,12 +18,15 @@ export default function RootLayout() {
   return (
     <SafeAreaProvider>
         <SafeAreaView style={{ flex: 1 }} edges={['top', 'right', 'left']}>
-          <Stack>
+          <Stack screenOptions={{
+            contentStyle: {
+              backgroundColor: '#fff'
+            }
+          }}>
             <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
             <Stack.Screen name="+not-found" />
           </Stack>
         </SafeAreaView>
-
         <StatusBar style={'dark'} />
     </SafeAreaProvider>
   );

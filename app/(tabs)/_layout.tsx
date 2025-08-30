@@ -2,7 +2,7 @@ import { Tabs } from 'expo-router';
 import React from 'react';
 import { Platform } from 'react-native';
 
-import { House } from 'lucide-react-native';
+import { History, House, Plus, User } from 'lucide-react-native';
 
 export default function TabLayout() {
 
@@ -28,21 +28,21 @@ export default function TabLayout() {
         name="reload"
         options={{
           title: 'Recargar',
-          tabBarIcon: ({ color }) => <House size={28} color={color} />,
+          tabBarIcon: ({ color }) => <Plus size={28} color={color} />,
         }}
       />
+        <Tabs.Screen
+          name="history"
+          options={{
+            title: 'Historial',
+            tabBarIcon: ({ color }) => <History size={28} color={color} />,
+          }}
+        />
       <Tabs.Screen
         name="profile"
         options={{
           title: 'Profile',
-          tabBarIcon: ({ color }) => <House size={28} color={color} />,
-        }}
-      />
-      <Tabs.Screen
-        name="settings"
-        options={{
-          title: 'Profile',
-          tabBarIcon: ({ color }) => <House size={28} color={color} />,
+          tabBarIcon: ({ color }) => <User size={28} color={color} />,
         }}
       />
     </Tabs>
